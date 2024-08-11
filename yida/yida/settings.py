@@ -74,12 +74,23 @@ WSGI_APPLICATION = 'yida.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'yida0811',
+        'USER': 'sa',
+        'PASSWORD': 'Wsy0819..',
+        'HOST': '192.168.1.114',
+        'PORT': '11451',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'provider': 'SQLOLEDB',
+            'extra_params': 'TrustServerCertificate=yes',
+        },
     }
 }
+
 
 
 # Password validation
@@ -104,9 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
